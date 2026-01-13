@@ -16,24 +16,73 @@ Il a été réalisé dans le cadre d’un exercice de programmation orientée ob
 - Terminal (Mac / Linux / Windows)
 
 ---
+# 📇 Gestionnaire de contacts en PHP (POO)
 
-## 🚀 Lancer le projet
+## 📝 Description du projet
 
-1. Cloner le dépôt
-```bash
-git clone https://github.com/TON_PSEUDO/Exercice_1_POO.git
-=======
-# The ArtBox
+Ce projet est un **outil de gestion de contacts en ligne de commande**, développé en **PHP avec la programmation orientée objet (POO)**.
 
-Ce projet contient : 
-* Le code initial du projet The ArtBox pour réaliser le projet 4 du parcours PHP/Symfony sur la branche `main`.
-* Les corrections des différentes étapes sur les branches `correction-etapeX` (avec X le numéro de l'étape).
+Il permet de :
+- lister des contacts
+- afficher le détail d’un contact
+- ajouter un nouveau contact
+- supprimer un contact
 
-## Installation du projet
+Le programme fonctionne **depuis le terminal**, sans interface graphique.
 
-Pour installer ce projet : 
-1. Télécharger le projet en cliquant sur le bouton "Code" ci-dessus puis "Download ZIP".
-2. Dézipper le projet et placez-le dans le dossier contenant vos projets PHP habituels.
-3. Ouvrir le projet dans le navigateur via l'adresse http://localhost/NOM_DU_DOSSIER (ou autre selon votre configuration)
-4. Ouvrir le projet dans votre IDE (exemple : VSCode) pour réaliser les prochaines étapes.
->>>>>>> c93b3b12ad03e175d29ee9ace18ac9e908dae8f2
+---
+
+## 🎯 Objectifs pédagogiques
+
+Ce projet a pour but de :
+- comprendre la **programmation orientée objet en PHP**
+- manipuler une **base de données avec PDO**
+- utiliser des **requêtes préparées** (sécurité SQL)
+- structurer un projet avec des **classes claires**
+- lire et interpréter des **commandes utilisateur**
+
+---
+
+## ⚙️ Prérequis
+
+Avant de lancer le projet, vous devez avoir :
+- PHP ≥ 8.0
+- MySQL
+- Un serveur local (ex : XAMPP)
+- Un terminal
+
+---
+
+## 🗂️ Structure du projet
+
+Le projet est organisé en plusieurs fichiers, chacun ayant un rôle précis.
+
+- `main.php`  
+  Fichier principal du programme.  
+  Il récupère la commande tapée par l’utilisateur dans le terminal et appelle les bonnes actions.
+
+- `command.php`  
+  Ce fichier analyse la commande tapée (list, detail, create, delete).  
+  Il vérifie si la commande est correcte et appelle les méthodes correspondantes.
+
+- `Contact.php`  
+  Cette classe représente un **contact**.  
+  Un objet Contact correspond à **une seule personne** (nom, email, téléphone).  
+  Cette classe ne communique pas avec la base de données.
+
+- `ContactManager.php`  
+  Cette classe s’occupe de **toutes les interactions avec la base de données**.  
+  Elle permet d’ajouter, lire, afficher et supprimer des contacts (CRUD).
+
+- `DBConnect.php`  
+  Ce fichier contient la connexion à la base de données avec PDO.  
+  Une seule connexion est créée et réutilisée dans tout le projet.
+
+- `README.md`  
+  Fichier de documentation qui explique le fonctionnement du projet.
+
+- `css/`  
+  Dossier contenant les fichiers CSS.
+
+- `img/`  
+  Dossier contenant les images utilisées dans le projet
